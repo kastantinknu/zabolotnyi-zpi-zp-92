@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using WebApplication5.DBContexts;
-using WebApplication5.Models;
+using Football_manager.DBContexts;
+using Football_manager.Models;
 
-namespace WebApplication5.Controllers
+namespace Football_manager.Controllers
 {
 
     public class UserController : Controller

@@ -5,10 +5,7 @@ using System.Threading.Tasks;
 
 namespace Football_manager.Models
 {
-    public class Phone
+    public class Class
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public string Company { get; set; }
     }
 }

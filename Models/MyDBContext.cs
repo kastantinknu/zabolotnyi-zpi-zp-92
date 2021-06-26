@@ -4,9 +4,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using WebApplication5.Models;
+using Football_manager.Models;
 
-namespace WebApplication5.DBContexts
+namespace Football_manager.DBContexts
 {
     public class MyDBContext : DbContext
     {

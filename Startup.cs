@@ -9,9 +9,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using WebApplication5.DBContexts;
+using Football_manager.DBContexts;
 
-namespace WebApplication5
+namespace Football_manager
 {
     public class Startup
     {
