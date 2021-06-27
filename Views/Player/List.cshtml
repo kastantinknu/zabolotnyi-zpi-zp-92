@@ -1,12 +1,23 @@
 ﻿@model IEnumerable<Player>
 @foreach (var p in Model) {
 <div>
+<h3>@p.Id  @p.Name</h3><h4>@p.Position</h4>
+
+
+@p.RedCard
+@p.TeamId
+</div>
+}
+
+
+
+@*@foreach (var p in Model) {
+<div>
 
 @p.Id
 @p.Name
 @p.Position
-@p.RedCard
-@p.TeamId
+
 </div>
 }
 @*
@@ -22,9 +33,9 @@
 <h3>@thisLink.Name</h3>
 </div>
 }
-*@
 
-@*
+
+
 
 
 <h3>@p.Position</h3>

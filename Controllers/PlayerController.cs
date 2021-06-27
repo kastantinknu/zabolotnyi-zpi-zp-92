@@ -11,13 +11,14 @@ namespace Football_manager.Controllers
     public class PlayerController : Controller
     {
         private IPlayerRepository repository;
+        public int PageSize = 3;
         public PlayerController(IPlayerRepository repo)
         {
             repository = repo;
         }
-        public ViewResult List() => View(repository.Players.ToList<Player>());
+        public ViewResult List(int PlayerPage = 1) => View(repository.Players.ToList<Player>().OrderBy(p => p.Id).Skip((PlayerPage - 1) * PageSize).Take(PageSize));
         //// GET: PlayerController
-        //public ActionResult Index()
+        //public ActionResult Index().ToList<Player>()
         //{
         //    return View();
         //}
@@ -26,7 +27,7 @@ namespace Football_manager.Controllers
         //public ActionResult Details(int id)
         //{
         //    return View();
-        //}
+        //}repository.Players
 
         //// GET: PlayerController/Create
         //public ActionResult Create()
