@@ -21,7 +21,7 @@ namespace Football_manager.Controllers
             //=> View(repository.Players.ToList<Player>()
             //            .OrderBy(p => p.Id)
             //            .Skip((PlayerPage - 1) * PageSize)
-            //            .Take(PageSize));1
+            //            .Take(PageSize));
 
             => View(new PlayersListViewModel
             {
