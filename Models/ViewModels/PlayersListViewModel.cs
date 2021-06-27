@@ -10,5 +10,6 @@ namespace Football_manager.Models.ViewModels
     {
         public IEnumerable<Player> Players { get; set; }
         public Paginginfo Paginginfo { get; set; }
+        public string CurrentTeam { get; set; }
     }
 }
