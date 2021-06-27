@@ -20,7 +20,7 @@ namespace Football_manager.Controllers
         public ViewResult List(int PlayerPage = 1)
             //=> View(repository.Players.ToList<Player>()
             //            .OrderBy(p => p.Id)
-            //            .Skip((PlayerPage - 1) * PageSize)111111111
+            //            .Skip((PlayerPage - 1) * PageSize)
             //            .Take(PageSize));
 
             => View(new PlayersListViewModel
