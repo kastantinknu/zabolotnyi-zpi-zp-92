@@ -14,12 +14,13 @@
 <a class="navbar-brand" href="#">Football manager</a>
 </div>
 <div class="row m-1 p-l">
-<div id="categories" class="col-3">
-Put something useful here later
+<div id="categories " class="col-3">
+@await Component.InvokeAsync("NavigationMenu")
 </div>
 <div class="col-9">
-            @RenderBody()
-  </div>    </div>
+@RenderBody()
+</div>
+</div>
 
 @*    <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
