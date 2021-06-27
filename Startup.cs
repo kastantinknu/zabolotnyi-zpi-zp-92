@@ -59,10 +59,16 @@ namespace Football_manager
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
+   name: "pagination",
+   template: "Player/Page{PlayerPage}",
+   defaults: new { Controller = "Player", action = "List" });
+
+
+                routes.MapRoute(
                     name: "default",
-              ///    template: "{controller=Home}/{action=Index}/{id?}");
+         ///    template: "{controller=Home}/{action=Index}/{id?}");
          template: "{controller=Player}/{action=List}/{id?}");
-        }); 
+            }); 
             //app.UseHttpsRedirection();
             //app.UseStaticFiles();
 

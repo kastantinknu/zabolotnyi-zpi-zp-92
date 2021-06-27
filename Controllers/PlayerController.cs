@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Football_manager.Models;
+using Football_manager.Models.ViewModels;
 
 namespace Football_manager.Controllers
 {
@@ -16,7 +17,25 @@ namespace Football_manager.Controllers
         {
             repository = repo;
         }
-        public ViewResult List(int PlayerPage = 1) => View(repository.Players.ToList<Player>().OrderBy(p => p.Id).Skip((PlayerPage - 1) * PageSize).Take(PageSize));
+        public ViewResult List(int PlayerPage = 1)
+            //=> View(repository.Players.ToList<Player>()
+            //            .OrderBy(p => p.Id)
+            //            .Skip((PlayerPage - 1) * PageSize)
+            //            .Take(PageSize));
+
+            => View(new PlayersListViewModel
+            {
+                Players = repository.Players.ToList<Player>()
+            .OrderBy(p => p.Id)
+            .Skip((PlayerPage - 1) * PageSize)
+            .Take(PageSize),
+                Paginginfo = new Paginginfo
+                {
+                    CurrentPage = PlayerPage,
+                    ItemsPerPage = PageSize,
+                    TotalItems = repository.Players.Count()
+                }
+            });
         //// GET: PlayerController
         //public ActionResult Index().ToList<Player>()
         //{

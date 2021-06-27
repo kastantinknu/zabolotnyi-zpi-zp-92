@@ -1,5 +1,5 @@
-﻿@model IEnumerable<Player>
-@foreach (var p in Model) {
+﻿@model PlayersListViewModel
+@foreach (var p in Model.Players) {
 <div>
 <h3>@p.Id  @p.Name</h3><h4>@p.Position</h4>
 
@@ -8,11 +8,11 @@
 @p.TeamId
 </div>
 }
-
+<div page-model="@Model.Paginginfo" page-action= "List"></div>
 
 
 @*@foreach (var p in Model) {
-<div>
+<div>IEnumerable<Player>
 
 @p.Id
 @p.Name
