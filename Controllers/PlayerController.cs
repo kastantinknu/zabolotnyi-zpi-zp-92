@@ -18,7 +18,7 @@ namespace Football_manager.Controllers
             repository = repo;
         }
         public ViewResult List(int PlayerPage = 1)
-            //=> View(repository.Players.ToList<Player>()fludfludfludfludfludfludfludflud
+            //=> View(repository.Players.ToList<Player>()
             //            .OrderBy(p => p.Id)
             //            .Skip((PlayerPage - 1) * PageSize)
             //            .Take(PageSize));
