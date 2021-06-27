@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Football_manager.DBContexts;
 using Football_manager.Models;
 
 namespace Football_manager.Controllers
@@ -24,11 +23,18 @@ namespace Football_manager.Controllers
         //    return (this.myDbContext.Users.ToList());
         //}
 
-        public IList<Phone> Get()
+        //public IList<Phone> Get()
+        //{
+        //    return (this.myDbContext.phones.ToList());
+        //}
+
+        //public IActionResult Index()
+        //{
+        //    return View(this.myDbContext.phones.ToList());
+        //}
+        public IActionResult List()
         {
-            return (this.myDbContext.phones.ToList());
+            return View(this.myDbContext.phones.ToList());
         }
-
-
     }
 }

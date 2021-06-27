@@ -7,17 +7,17 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
-COPY ["WebApplication5.csproj", "."]
-RUN dotnet restore "./WebApplication5.csproj"
+COPY ["Football_manager.csproj", "."]
+RUN dotnet restore "./Football_manager.csproj"
 COPY . .
 WORKDIR "/src/."
-RUN dotnet build "WebApplication5.csproj" -c Release -o /app/build
+RUN dotnet build "Football_manager.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "WebApplication5.csproj" -c Release -o /app/publish
+RUN dotnet publish "Football_manager.csproj" -c Release -o /app/publish
 
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-CMD ASPNETCORE_URLS=http://*:$PORT dotnet WebApplication5.dll
+CMD ASPNETCORE_URLS=http://*:$PORT dotnet Football_manager.dll
 #ENTRYPOINT ["dotnet", "WebApplication5.dll"]

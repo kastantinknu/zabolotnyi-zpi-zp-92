@@ -1,0 +1,30 @@
+﻿@{
+    Layout = null;
+}
+<! DOCTYPE html>
+<html>
+<head>
+<meta name= "viewport" content="width=device-width" />
+<title>Added</title>
+@*   <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css"/>
+*@
+              <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" integrity="undefined" crossorigin="anonymous">
+
+</head>
+<body class="text-center">
+<p>
+<hl>@Model.Name Added! </hl>
+@if (Model.RedCard==false) {
+@:Player can play! 
+} else {
+@:Player cannot play! 
+}
+</p>
+<p>Click <a class="nav-link" asp-action="ListPlayers">here</a> to see who is added.</p>
+    <footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="undefined" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="undefined" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.esm.min.js" integrity="undefined" crossorigin="anonymous"></script>
+</footer>    
+</body>
+</html>

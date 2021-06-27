@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Football_manager.Models;
 
-namespace Football_manager.DBContexts
+namespace Football_manager.Models
 {
     public class MyDBContext : DbContext
     {

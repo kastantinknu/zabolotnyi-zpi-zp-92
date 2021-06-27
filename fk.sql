@@ -1,0 +1,2 @@
+ALTER TABLE Games ADD CONSTRAINT fk_firstteamid FOREIGN KEY (FirstTeamId) REFERENCES Teams(Id);
+ALTER TABLE Games ADD CONSTRAINT fk_secondteamid FOREIGN KEY (SecondTeamId) REFERENCES Teams(Id);

@@ -1,0 +1,42 @@
+﻿@model IEnumerable<Player>
+@foreach (var p in Model) {
+<div>
+
+@p.Id
+@p.Name
+@p.Position
+@p.RedCard
+@p.TeamId
+</div>
+}
+@*
+
+@foreach(var thisLink in Model)
+{
+<div>
+
+
+
+
+
+<h3>@thisLink.Name</h3>
+</div>
+}
+*@
+
+@*
+
+
+<h3>@p.Position</h3>
+<h3>@p.TeamId</h3>(int)
+<h3>@p.RedCard</h3>
+<h3>@p.Id</h3>
+
+@model IEnumerable<Phone>
+@foreach (var p in Model) {
+<div>
+<h3>@p.Id</h3>
+@p.Name
+<h4>@p.Company.ToString()</h4>
+</div>
+}*@

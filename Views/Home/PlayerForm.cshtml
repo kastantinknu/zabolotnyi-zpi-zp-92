@@ -1,0 +1,56 @@
+﻿@model Football_manager.Models.Player
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta name="viewport " content="width=device-width" />
+    <title>PlayerForm</title>
+    <link rel="stylesheet" href ="/css/styles.css" /> 
+   @*<link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css"/>*@
+                 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" integrity="undefined" crossorigin="anonymous">
+
+</head>
+        <body>
+            <div class="panel panel-success">
+                <div class="panel-heading text-center">PlayerForm</div>
+                <div class="panel-body">
+
+                    <form class="p-a-l" asp-action="PlayerForm" method="post">
+                        <div asp-validation-summary="All"></div>
+                        <div class="form-group">
+                        <label asp-for="Id">Id: </label>
+                        <input class="form-control" asp-for="Id" />
+                        </div>
+                        <div class="form-group">
+                        <label asp-for="Name">Name:</label>
+                        <input class="form-control" asp-for="Name" />
+                        </div>
+
+                        <div class="form-group">
+                        <label asp-for="Position">Position: </label>
+                        <input class="form-control" asp-for="Position" />
+                        </div>
+                        <div class="form-group">
+                        <label>RedCard</label>
+                        <select class="form-control" asp-for="RedCard">
+                        <option value="">Choose an option</option>
+                        <option value="true">Yes</option>
+                        <option value="false">No</option>
+                        </select>
+                        </div>
+                         <div class="text-center">
+                        <button  class="btn btn-primary" type="submit">Submit PlayerForm</button>
+                        </div>
+
+                    </form>
+             </div>
+        </div>
+            <footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="undefined" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="undefined" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.esm.min.js" integrity="undefined" crossorigin="anonymous"></script>
+</footer>    
+        </body>
+</html>
