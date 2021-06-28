@@ -1,15 +1,16 @@
-﻿@model IEnumerable<byte>
+﻿@model IEnumerable<Team>
 <a class="btn btn-block btn-secondary "
 asp-action="List"
 asp-controller="Player"
 asp-route-Team="">
-Home
+All players
 </a>
-@foreach (byte Team in Model) {
-<a class="btn btn-block btn-secondary"
+@foreach (var Team in Model) {
+<a class="btn btn-block
+@(Team.Id.ToString() == ViewBag.SelectedTeam?"btn-primary":"btn-secondary")"
 asp-action="List"
 asp-controller="Player"
-asp-route-Team="@Team"
+asp-route-Team="@Team.Id"
 asp-route-PlayerPage="1">
-@Team
+@Team.Name
 </a>}

@@ -20,7 +20,7 @@ namespace Football_manager.Models
         [Required(ErrorMessage = "Please enter player's team")]
         public byte TeamId { get; set; }
 
- 
+
 
     }
 }

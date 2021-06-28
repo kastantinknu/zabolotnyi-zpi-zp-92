@@ -1,5 +1,5 @@
-﻿<div class="card card-outline-primary m-1 p-l">
-<div class="bg-faded p-l">
+﻿
+@*<div class="bg-faded p-l">
 <h4>
 @Model.Id  @Model.Name
 <span class="badge badge-pill badge-primary" style="float:right">
@@ -7,10 +7,21 @@
 </span>
 </h4>
 </div>
-<div class= "card-text p-l">@Model.RedCard
-@Model.TeamId</div>
-</div>
+<div class= "card-text p-l">RedCard: @Model.RedCard*@
+@*@Model.TeamId</div>*@
 
+@*@foreach ( Football_manager.Models.Player p in Model) {
+*@
+<td>@Model.Id</td>
+<td>@Model.Name</td>
+<td>@Model.Position</td>
+<td>@Model.RedCard</td>
 
+@*}<tr></tr>
+*@
+
+@*
 <div>
-</div>
+</div>*@
+@*Players.
+*@

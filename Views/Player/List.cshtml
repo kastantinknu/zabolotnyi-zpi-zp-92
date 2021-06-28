@@ -1,7 +1,31 @@
 ﻿@model PlayersListViewModel
+
+<div class="panel-body">
+<h2>Here is the list of players</h2>
+
+
+<table class="table table-sm table-striped table-bordered">
+<thead>
+<tr>
+<th>Team</th>
+<th>Id</th>
+
+<th>Name</th>
+<th>Position</th>
+<th>RedCard</th>
+</tr>
+</thead>
+<tbody>
 @foreach (var p in Model.Players) {
+@*<div class="card card-outline-primary m-1 p-l"></div>*@
+<tr><td>@Model.Teams.ToList().Find(x => x.Id==p.TeamId).Name</td>
 @Html.Partial("PlayerSummary", p)
-}
+</tr>
+
+
+}</tbody>
+</table>
+</div>
 <div page-model="@Model.Paginginfo" page-action="List" page-classes-enabled="true"
 page-class="btn" page-class-normal="btn-secondary"
 page-class-selected="btn-primary" page-class-selected="btn-primary" page-url-category="@Model.CurrentTeam"
@@ -9,7 +33,7 @@ class="btn-group pull-right m-l">
 
 </div>
 
-@*@foreach (var p in Model) {
+@*@foreach (var p in Model) {p.TeamId.Id.Contains(" ")
 <div>IEnumerable<Player>Async
 
 @p.Id

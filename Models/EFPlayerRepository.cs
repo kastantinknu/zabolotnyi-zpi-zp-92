@@ -13,5 +13,8 @@ namespace Football_manager.Models
             context = ctx;
         }
         public IQueryable<Player> Players => context.Players;
+        public IQueryable<Team> Teams => context.Teams;
+        public IQueryable<Game> Games => context.Games;
+
     }
 }

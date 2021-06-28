@@ -6,10 +6,9 @@ using Football_manager.Models;
 
 namespace Football_manager.Models
 {
-    public interface IPlayerRepository
+    public interface ITeamRepository
     {
         IQueryable<Player> Players { get; }
         IQueryable<Team> Teams { get; }
-        IQueryable<Game> Games { get; }
     }
 }

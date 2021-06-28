@@ -16,10 +16,17 @@ namespace Football_manager.Components
         }
         public IViewComponentResult Invoke()
         {
-            return View(repository.Players
-            .Select(x => x.TeamId)
-            .Distinct()
-            .OrderBy(x => x));
+            ViewBag.SelectedTeam = RouteData?.Values["Team"];
+            return View(repository.Teams
+            );
+//.Select(x => x.Name)
+//            .Distinct()
+//            .OrderBy(x => x)
+
+            //View(repository.Players
+            //.Select(x => x.TeamId)
+            //.Distinct()
+            //.OrderBy(x => x));
         }
     }
 }
