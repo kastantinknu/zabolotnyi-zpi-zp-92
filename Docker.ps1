@@ -1,4 +1,4 @@
-﻿heroku login
+﻿#heroku login
 docker ps -a
 docker build -t counter-image-six-two -f Dockerfile .
 docker create --name core-counter-six-two counter-image-six-two
