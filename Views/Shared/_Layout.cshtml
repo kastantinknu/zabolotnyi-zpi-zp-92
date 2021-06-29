@@ -13,9 +13,9 @@
 <div class="navbar  navbar-light bg-success " role="navigation" >
 <a class="navbar-brand" href="#">Football manager</a>
 </div>
-<div class="container-fluid justify-content-between  border border-info">
+<div class="container-fluid justify-content-between ">
 @* *@    <div class="row "> 
-           <div  class="col-xl-3 col-lg-3 col-md-3 col-sm-4 col-xs-6 border border-dark"  style=" width:295px">
+           <div  class="col-xl-3 col-lg-3 col-md-3 col-sm-4 col-xs-6 "  style=" width:295px">
                         <div class=" my-2 my-3 my-4  overflow-auto" style=" height: 275px; " >
 
                         @await Component.InvokeAsync("NavigationMenu")
@@ -27,7 +27,7 @@
                         </div>
             </div>
 
-            <div class="col border border-warning">
+            <div class="col">
             @RenderBody()
             </div>
    </div>

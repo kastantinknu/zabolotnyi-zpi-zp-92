@@ -11,7 +11,7 @@ namespace Football_manager.Controllers
     public class GameController : Controller
     {
         private IPlayerRepository repository;
-      public int PageSize = 3;
+      public int PageSize = 8;
         public GameController(IPlayerRepository repo)
         {
             repository = repo;
