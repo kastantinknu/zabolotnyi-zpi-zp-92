@@ -17,14 +17,21 @@ namespace Football_manager.Controllers
         }
         public ViewResult Index() => View(repository.Players);
         public ViewResult Edit(int Id) =>
-                View(
-                    new EditInfo
-                    {
-                        Players = repository.Players.ToList<Player>(),
-
-                        player = repository.Players
+                View(repository.Players
                             .FirstOrDefault(p => p.Id == Id)
-                    });
+
+
+
+                    //new EditInfo
+                    //{
+                    //    Players = repository.Players.ToList<Player>(),
+
+                    //    player = repository.Players
+                    //        .FirstOrDefault(p => p.Id == Id)
+                    //}
+                    
+                    
+                    );
 
 
 
@@ -44,5 +51,7 @@ namespace Football_manager.Controllers
                 return View(player);
             }
         }
+
+        public ViewResult Create() => View("Edit", new Player());
     }
 }
