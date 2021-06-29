@@ -1,39 +1,23 @@
-﻿API Web Application ASP.NET Core 3.1 Configure for HTTPS Enable Docker Support MySQL Server 8.0.11
+﻿1. web framework:
+
+MVC ASP.NET Core 6.0 Configure for HTTPS Enable Docker Linux
 
 
+2. Support MySQL Server 8.0.11:
 
-Microsoft.EntityFrameworkCore (v5.0.5 – the latest stable version)
-Microsoft.EntityFrameworkCore.Tools (v5.0.5 – the latest stable version)
+Microsoft.EntityFrameworkCore (v5.0.7 – the latest stable version)
+Microsoft.EntityFrameworkCore.Tools (v5.0.7 – the latest stable version)
 Pomelo.EntityFrameworkCore.MySql (version 5.0.0)
 
+3. mySQL Server:
 
-127.0.0.1 111111 root 3306
-MySQL 8.0 Command Line Client
-how Databases;
+server=sql11.freesqldatabase.com;
+user=sql11421518;
+database=sql11421518;
+port=3306;
+password=y6YnutiDAF
 
-IIS Express
-https://localhost:44397/api/user
 
+4. heroku hosting:
 
-deploying failure
-tools panel
-docker 
-PW>
-Get-ExecutionPolicy
-Set-ExecutionPolicy Unrestricted -Force
-
-heroku login
-docker ps -a
-
-docker build -t counter-image-six-two -f Dockerfile .
-docker create --name core-counter-six-two counter-image-six-two
-docker ps -a
-
-docker tag counter-image-six-two registry.heroku.com/appstory-my/web
-heroku container:login
-docker push registry.heroku.com/appstory-my/web
-heroku container:release web -a=appstory-my
-
-heroku logs --tail -a=appstory-my
-
-Set-ExecutionPolicy Restricted -Force
+https://zabolotnyi-zpi-zp-92.herokuapp.com/
