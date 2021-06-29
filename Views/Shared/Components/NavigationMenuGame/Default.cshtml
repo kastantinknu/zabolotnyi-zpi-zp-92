@@ -1,0 +1,54 @@
+﻿@model IEnumerable<Team>
+<a class="btn btn-block btn-secondary "
+asp-action="List"
+asp-controller="Game"
+asp-route-firstteam="">
+All games
+</a>
+@foreach (var Team in Model) {
+<a class="btn btn-block
+@(Team.Id.ToString() == ViewBag.SelectedTeam?"btn-primary":"btn-secondary")"
+asp-action="List"
+asp-controller="Game"
+asp-route-firstteam="@Team.Id"
+asp-route-Page="1">
+@Team.Name
+</a>}
+
+
+
+
+@*@model IEnumerable<byte>
+<a class="btn btn-block btn-secondary "
+asp-action="List"
+asp-controller="Game"
+asp-route-firstteam="">
+All games
+</a>
+@foreach (var Game in Model) {
+<a class="btn btn-block
+@(Game.ToString() == ViewBag.SelectedTeam?"btn-primary":"btn-secondary")"
+asp-action="List"
+asp-controller="Game"
+asp-route-firstteam="@Game"
+asp-route-Page="1">
+@Game
+</a>}*@
+
+
+@*@model IEnumerable<Game>.Distinct().FirstTeamId.FirstTeamId.FirstTeamId
+<a class="btn btn-block btn-secondary "
+asp-action="List"
+asp-controller="Game"
+asp-route-Game="">
+All players
+</a>
+@foreach (var Game in Model) {
+<a class="btn btn-block
+@(Game.FirstTeamId.ToString() == ViewBag.SelectedTeam?"btn-primary":"btn-secondary")"
+asp-action="List"
+asp-controller="Game"
+asp-route-Game="@Game.FirstTeamId"
+asp-route-PlayerPage="1">
+@Game.FirstTeamId
+</a>}*@

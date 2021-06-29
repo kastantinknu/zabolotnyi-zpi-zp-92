@@ -22,7 +22,9 @@ namespace Football_manager.Infrastructure
         [ViewContext]
         [HtmlAttributeNotBound]
         public ViewContext ViewContext { get; set; }
-        public Paginginfo PageModel { get; set; }
+     //  public GamePaginginfo PageModel { get; set; }
+   
+      public Paginginfo PageModel { get; set; }
         public string PageAction { get; set; }
         [HtmlAttributeName(DictionaryAttributePrefix = "page-url-")]
         public Dictionary<string, object> PageUrlValues { get; set; }
@@ -36,15 +38,17 @@ namespace Football_manager.Infrastructure
         {
             IUrlHelper urlHelper = urlHelperFactory.GetUrlHelper(ViewContext);
             TagBuilder result = new TagBuilder("div");
+
             for (int i = 1; i <= PageModel.TotalPages; i++)
             {
                 TagBuilder tag = new TagBuilder("a");
 
-                PageUrlValues["PlayerPage"] = i;
+             //   PageUrlValues["PlayerPage"] = i;
+                PageUrlValues["Page"] = i;
                 tag.Attributes["href"] = urlHelper.Action(PageAction, PageUrlValues);
 
                 tag.Attributes["href "] = urlHelper.Action(PageAction,
-                new { PlayerPage = i });
+                new { Page = i });
                 if (PageClassesEnabled)
                 {
                     tag.AddCssClass(PageClass);

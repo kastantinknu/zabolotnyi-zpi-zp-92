@@ -2,7 +2,7 @@
 <a class="btn btn-block btn-secondary "
 asp-action="List"
 asp-controller="Player"
-asp-route-Team="">
+asp-route-team="">
 All players
 </a>
 @foreach (var Team in Model) {
@@ -10,7 +10,7 @@ All players
 @(Team.Id.ToString() == ViewBag.SelectedTeam?"btn-primary":"btn-secondary")"
 asp-action="List"
 asp-controller="Player"
-asp-route-Team="@Team.Id"
-asp-route-PlayerPage="1">
+asp-route-team="@Team.Id"
+asp-route-Page="1">
 @Team.Name
 </a>}

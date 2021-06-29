@@ -16,7 +16,7 @@ namespace Football_manager.Components
         }
         public IViewComponentResult Invoke()
         {
-            ViewBag.SelectedTeam = RouteData?.Values["Team"];
+            ViewBag.SelectedTeam = RouteData?.Values["team"];
             return View(repository.Teams
             );
 //.Select(x => x.Name)

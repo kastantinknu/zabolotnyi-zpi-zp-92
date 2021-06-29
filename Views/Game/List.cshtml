@@ -1,7 +1,6 @@
-﻿@model PlayersListViewModel
-
+﻿
 <div class="panel-body">
-<h2>Here is the list of players</h2>
+<h2>Here is the list of games</h2>
 
 
 <table class="table table-sm table-striped table-bordered">
@@ -9,27 +8,42 @@
 <tr>
 
 <th>Id</th>
-
-<th>Name</th>
-<th>Position</th>
-<th>RedCard</th><th>Team</th>
+<th>Score</th>
+<th>Data</th>
+<th>FirstTeamId</th>
+<th>SecondTeamId</th>
 </tr>
 </thead>
 <tbody>
-@foreach (var p in Model.Players) {
-@*<div class="card card-outline-primary m-1 p-l"></div>*@
+
+
+
+@*<div class="card card-outline-primary m-1 p-l"></div>IEnumerable<Game>*@
 @*@Model.CurrentTeamName
-*@<tr>
-@Html.Partial("PlayerSummary", p)<td>@Model.Teams.ToList().Find(x => x.Id==p.TeamId).Name</td>
-</tr>
+*@
+@model GameListViewModel
+@foreach (var p in Model.Games) {
+<tr>
+<td>@p.Id</td>
+<td>@p.Score</td>
+<td>@p.Data.Date.ToString("ddd, dd MMM yyy")</td>
+<td>@p.FirstTeamId</td>
+<td>@p.SecondTeamId</td>
+
+</tr>}
+@*@Html.Partial("PlayerSummary", p)*@
 
 
-}</tbody>
+
+
+
+</tbody>
 </table>
 </div>
+
 <div page-model="@Model.Paginginfo" page-action="List" page-classes-enabled="true"
 page-class="btn" page-class-normal="btn-secondary"
-page-class-selected="btn-primary" page-class-selected="btn-primary" page-url-team="@Model.CurrentTeam"
+page-class-selected="btn-primary" page-class-selected="btn-primary" page-url-firstteam="@Model.CurrentTeam"
 class="btn-group pull-right m-l">
 
 </div>@**@

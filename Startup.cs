@@ -25,15 +25,15 @@ namespace Football_manager
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-           string mySqlConnectionStr = Configuration.GetConnectionString("DefaultConnection");
-           //  string mySqlConnectionStr = Configuration.GetConnectionString("OtherConnection");
-           // services.AddDbContextPool<MyDBContext>(options => options.UseMySql(mySqlConnectionStr, ServerVersion.AutoDetect(mySqlConnectionStr)));
+            string mySqlConnectionStr = Configuration.GetConnectionString("DefaultConnection");
+            //  string mySqlConnectionStr = Configuration.GetConnectionString("OtherConnection");
+            // services.AddDbContextPool<MyDBContext>(options => options.UseMySql(mySqlConnectionStr, ServerVersion.AutoDetect(mySqlConnectionStr)));
             services.AddDbContextPool<FootballManagerDBContext>(options => options.UseMySql(mySqlConnectionStr, ServerVersion.AutoDetect(mySqlConnectionStr)));
-           // //  services.AddTransient<IPlayerRepository, FakePlayerRepository>();
-         services.AddTransient<IPlayerRepository, EFPlayerRepository>();
-        services.AddMvc();
+            // //  services.AddTransient<IPlayerRepository, FakePlayerRepository>();
+            services.AddTransient<IPlayerRepository, EFPlayerRepository>();
+            services.AddMvc();
             //services.AddControllersWithViews(); 
-            
+
             services.AddControllersWithViews(mvcOtions =>
             {
                 mvcOtions.EnableEndpointRouting = false;
@@ -58,53 +58,157 @@ namespace Football_manager
             app.UseStaticFiles();
             app.UseMvc(routes =>
             {
+
+
+
+
                 routes.MapRoute(
-name: null,
-template: "{team}/Page{PlayerPage:int}",
-defaults: new { controller = "Player", action = "List" }
-);
+               name: null,
+               template: "Team/{team}/Page{Page:int}",
+               defaults: new
+               {
+                   controller = "Player",
+                   action = "List",
+                   Page = 1
+               });
                 routes.MapRoute(
                 name: null,
-                template: "Page{PlayerPage:int}",
+                template: "",
                 defaults: new
                 {
                     controller = "Player",
                     action = "List",
-                    productPage = 1
-                }
-                );
+                    Page = 1
+                });
+
                 routes.MapRoute(
                 name: null,
-                template: "{team}",
+                template: "Game/{firstteam}/Page{Page:int}",
                 defaults: new
                 {
-                    controller = "Player",
+                    controller = "Game",
                     action = "List",
-                    productPage = 1
-                }
-                );
-                routes.MapRoute(
-name: null,
-template: "",
-defaults: new
-{
-    controller = "Player",
-    action = "List",
-    productPage = 1
-});
-                 routes.MapRoute(name: null, template: "{controller}/{action}/{id?}");
+                    Page = 1
+                });
 
-   //             routes.MapRoute(
-   //name: "pagination",
-   //template: "Player/Page{PlayerPage}",
-   //defaults: new { Controller = "Player", action = "List" });
+                //routes.MapRoute(
+                //name: null,
+                //template: "",
+                //defaults: new
+                //{
+                //    controller = "Game",
+                //    action = "List",
+                //    Page = 1
+                //});
+
+                routes.MapRoute(name: null, template: "{controller}/{action}/{id?}");
 
 
-         //       routes.MapRoute(
-         //           name: "default",
-         /////    template: "{controller=Home}/{action=Index}/{id?}");
-         //template: "{controller=Player}/{action=List}/{id?}");
-            }); 
+                //routes.MapRoute(Player/Page{PlayerPage}
+                //name: null,
+                //template: "{firstteam}/Page{Page:int}",
+                //defaults: new
+                //{
+                //    controller = "Game",
+                //    action = "List"
+                //});
+                //routes.MapRoute(
+                //name: null,
+                //template: "",
+                //defaults: new
+                //{
+                //    controller = "Game",
+                //    action = "List",
+                //    Page = 1
+                //});
+                //routes.MapRoute(
+                //name: null,
+                //template: "{firstteam}",
+                //defaults: new
+                //{
+                //    controller = "Game",
+                //    action = "List",
+                //    Page = 1
+                //}
+                //);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                //             routes.MapRoute(
+                //                 name: "default",
+                //      template: "{controller=Game}/{action=List}/{id?}");
+                //             routes.MapRoute(
+                //name: "pagination",
+                //template: "Game/Page{Page}",
+                //defaults: new { Controller = "Game", action = "List" });
+
+                //                routes.MapRoute(
+                //name: null,
+                //template: "{team}/Page{PlayerPage:int}",
+                //defaults: new { controller = "Player", action = "List" }
+                //);
+                //                routes.MapRoute(
+                //                name: null,
+                //                template: "Page{PlayerPage:int}",
+                //                defaults: new
+                //                {
+                //                    controller = "Player",
+                //                    action = "List",
+                //                    productPage = 1
+                //                }
+                //                );
+
+
+                //                routes.MapRoute(
+                //                name: null,
+                //                template: "{team}",
+                //                defaults: new
+                //                {
+                //                    controller = "Player",
+                //                    action = "List",
+                //                    productPage = 1
+                //                }
+                //                );
+
+
+                //                routes.MapRoute(
+                //name: null,
+                //template: "",
+                //defaults: new
+                //{
+                //    controller = "Player",
+                //    action = "List",
+                //    productPage = 1
+                //});
+                //        routes.MapRoute(name: null, template: "{controller}/{action}/{id?}");
+
+                ////             routes.MapRoute(
+                ////name: "pagination",
+                ////template: "Player/Page{PlayerPage}",
+                ////defaults: new { Controller = "Player", action = "List" });
+
+
+                ////       routes.MapRoute(
+                ////           name: "default",
+                ///////    template: "{controller=Home}/{action=Index}/{id?}");
+                ////template: "{controller=Player}/{action=List}/{id?}");
+            });
             //app.UseHttpsRedirection();
             //app.UseStaticFiles();
 

@@ -17,7 +17,7 @@ namespace Football_manager.Controllers
         {
             repository = repo;
         }
-        public ViewResult List(string team, int PlayerPage = 1)
+        public ViewResult List(string team, int Page = 1)
             //=> View(repository.Players.ToList<Player>()
             //            .OrderBy(p => p.Id)
             //            .Skip((PlayerPage - 1) * PageSize)
@@ -27,13 +27,13 @@ namespace Football_manager.Controllers
             {
                 Teams = repository.Teams.ToList<Team>(),
                 Players = repository.Players.ToList<Player>()
-             .Where(p => team == null || p.TeamId.ToString() == team)
-            .OrderBy(p => p.Id)
-            .Skip((PlayerPage - 1) * PageSize)
-            .Take(PageSize),
+               .Where(p => team == null || p.TeamId.ToString() == team)
+               .OrderBy(p => p.Id)
+               .Skip((Page - 1) * PageSize)
+               .Take(PageSize),
                 Paginginfo = new Paginginfo
                 {
-                    CurrentPage = PlayerPage,
+                    CurrentPage = Page,
                     ItemsPerPage = PageSize,
                     // TotalItems = repository.Players.Count()
                     TotalItems = team == null ?
