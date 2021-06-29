@@ -1,4 +1,4 @@
-﻿
+﻿@model GameListViewModel
 <div class="panel-body">
 <h2>Here is the list of games</h2>
 
@@ -10,8 +10,8 @@
 <th>Id</th>
 <th>Score</th>
 <th>Data</th>
-<th>FirstTeamId</th>
-<th>SecondTeamId</th>
+<th>First Team</th>
+<th>Second Team</th>
 </tr>
 </thead>
 <tbody>
@@ -21,15 +21,21 @@
 @*<div class="card card-outline-primary m-1 p-l"></div>IEnumerable<Game>*@
 @*@Model.CurrentTeamName
 *@
-@model GameListViewModel
-@foreach (var p in Model.Games) {
-<tr>
-<td>@p.Id</td>
-<td>@p.Score</td>
-<td>@p.Data.Date.ToString("ddd, dd MMM yyy")</td>
-<td>@p.FirstTeamId</td>
-<td>@p.SecondTeamId</td>
 
+@foreach (var pp in Model.Games) {
+<tr>
+@*<td>@p.Id</td>
+<td>@p.Score</td>
+<td>@p.Data.Date.ToString("ddd, dd MMM yyy")</td>*@
+@*@Html.Partial("GameSummary", pp)
+*@
+<td>@pp.Id</td>
+<td>@pp.Score</td>
+<td>@pp.Data.Date.ToString("ddd, dd MMM yyy")</td>
+@*<td>@pp.FirstTeamId</td>
+<td>@pp.SecondTeamId</td>*@
+<td>@Model.Teams.ToList().Find(x => x.Id==pp.FirstTeamId).Name</td>
+<td>@Model.Teams.ToList().Find(x => x.Id==pp.SecondTeamId).Name</td>
 </tr>}
 @*@Html.Partial("PlayerSummary", p)*@
 

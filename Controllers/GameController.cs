@@ -23,7 +23,8 @@ namespace Football_manager.Controllers
             //            .Take(PageSize));
 
             => View(new GameListViewModel
-            { 
+            {
+                Teams = repository.Teams.ToList<Team>(),
 
                 Games = repository.Games
                 .Where(p => firstteam == null || p.FirstTeamId.ToString() == firstteam || p.SecondTeamId.ToString() == firstteam)

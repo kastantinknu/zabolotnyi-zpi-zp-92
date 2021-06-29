@@ -10,23 +10,31 @@
 </head>
 <body>
 
-<div class="navbar  navbar-light bg-success " role="navigation">
+<div class="navbar  navbar-light bg-success " role="navigation" >
 <a class="navbar-brand" href="#">Football manager</a>
 </div>
+<div class="container-fluid justify-content-between  border border-info">
+@* *@    <div class="row "> 
+           <div  class="col-xl-3 col-lg-3 col-md-3 col-sm-4 col-xs-6 border border-dark"  style=" width:295px">
+                        <div class=" my-2 my-3 my-4  overflow-auto" style=" height: 275px; " >
 
-<div class="row m-1 p-l">
-<div id="categories " class="col-3">
-@await Component.InvokeAsync("NavigationMenu")
-@await Component.InvokeAsync("NavigationMenuGame")
-</div>
-<div class="col-9">
-@RenderBody()
-</div>
-</div>
+                        @await Component.InvokeAsync("NavigationMenu")
+                        </div>
 
-@*    <header>
+                        <div class=" my-2 my-3 my-4  overflow-auto" style=" height: 275px; " >
+
+                        @await Component.InvokeAsync("NavigationMenuGame")
+                        </div>
+            </div>
+
+            <div class="col border border-warning">
+            @RenderBody()
+            </div>
+   </div>
+</div>
+@*    <header>  -xl-9 col-lg-6 col-md-4 col-sm-5-xl-9 col-lg-5  col-md-5 col-sm-6 col-xs-6 
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
+            <div class="container"> justify-content-start 
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">WebApplication5</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
@@ -52,7 +60,7 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2021 - WebApplication5 - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; 2021 - Football_manager zabolotnyi-zpi-zp-92 <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

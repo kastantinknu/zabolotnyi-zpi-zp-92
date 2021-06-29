@@ -15,7 +15,7 @@ namespace Football_manager
         public static void Main(string[] args)
         {
             BuildWebHost(args).Run();
-            //CreateHostBuilder(args).Build().Run();
+           // CreateHostBuilder(args).Build().Run();
         }
         public static IWebHost BuildWebHost(string[] args) =>
 WebHost.CreateDefaultBuilder(args)

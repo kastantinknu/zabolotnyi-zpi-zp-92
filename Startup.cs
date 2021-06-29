@@ -59,9 +59,6 @@ namespace Football_manager
             app.UseMvc(routes =>
             {
 
-
-
-
                 routes.MapRoute(
                name: null,
                template: "Team/{team}/Page{Page:int}",
@@ -102,6 +99,66 @@ namespace Football_manager
                 //});
 
                 routes.MapRoute(name: null, template: "{controller}/{action}/{id?}");
+
+
+                // routes.MapRoute(
+                //name: null,
+                //template: "Player/{team}/Page{Page:int}",
+                //defaults: new
+                //{
+                //    controller = "Player",
+                //    action = "List",
+                //    Page = 1
+                //});
+
+
+                // routes.MapRoute(
+                // name: null,
+                // template: "Player",
+                // defaults: new
+                // {
+                //     controller = "Player",
+                //     action = "List",
+                //     Page = 1
+                // });
+
+                // routes.MapRoute(
+                // name: null,
+                // template: "Game/{firstteam}/Page{Page:int}",
+                // defaults: new
+                // {
+                //     controller = "Game",
+                //     action = "List",
+                //     Page = 1
+                // });
+
+                // routes.MapRoute(
+                // name: null,
+                // template: "Game",
+                // defaults: new
+                // {
+                //     controller = "Game",
+                //     action = "List",
+                //     Page = 1
+                // });
+
+                // routes.MapRoute(name: null, template: "{controller}/{action}/{id?}");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
                 //routes.MapRoute(Player/Page{PlayerPage}

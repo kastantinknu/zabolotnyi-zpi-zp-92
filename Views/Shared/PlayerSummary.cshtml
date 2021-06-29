@@ -17,6 +17,17 @@
 <td>@Model.Position</td>
 <td>@Model.RedCard</td>
 
+
+@*@model IEnumerable<Player>
+@foreach (var p in Model) {
+<td>@p.Id</td>
+<td>@p.Name</td>
+<td>@p.Position</td>
+<td>@p.RedCard</td>*@
+
+
+
+
 @*}<tr></tr>
 *@
 

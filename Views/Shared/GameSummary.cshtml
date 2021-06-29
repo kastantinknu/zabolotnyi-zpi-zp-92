@@ -1,0 +1,8 @@
+﻿
+
+@model IEnumerable<Game>
+@foreach (var g in Model) {
+<td>@g.Id</td>
+<td>@g.Score</td>
+<td>@g.Data.Date.ToString("ddd, dd MMM yyy")</td>
+}
