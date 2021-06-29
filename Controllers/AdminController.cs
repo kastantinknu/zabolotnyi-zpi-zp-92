@@ -29,8 +29,8 @@ namespace Football_manager.Controllers
                     //    player = repository.Players
                     //        .FirstOrDefault(p => p.Id == Id)
                     //}
-                    
-                    
+
+
                     );
 
 
@@ -53,5 +53,18 @@ namespace Football_manager.Controllers
         }
 
         public ViewResult Create() => View("Edit", new Player());
+
+
+
+        [HttpPost]
+        public IActionResult Delete(int Id)
+        {
+            Player deletedPlayer = repository.DeletePlayer(Id);
+            if (deletedPlayer != null)
+            {
+                TempData["message"] = $"{deletedPlayer.Name} was deleted";
+            }
+            return RedirectToAction("Index");
+                }
     }
 }

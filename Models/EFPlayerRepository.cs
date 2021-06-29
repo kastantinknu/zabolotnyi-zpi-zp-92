@@ -26,7 +26,7 @@ namespace Football_manager.Models
             {
                 Player dbEntry = context.Players
                 .FirstOrDefault(p => p.Id == player.Id);
-                if(dbEntry != null)
+                if (dbEntry != null)
                 {
                     dbEntry.Name = player.Name;
                     dbEntry.Position = player.Position;
@@ -35,7 +35,19 @@ namespace Football_manager.Models
                     dbEntry.Id = player.Id;
                 }
             }
-context.SaveChanges();
-                }
+            context.SaveChanges();
+        }
+
+        public Player DeletePlayer(int Id)
+        {
+            Player dbEntry = context.Players
+            .FirstOrDefault(p => p.Id == Id);
+            if (dbEntry != null)
+            {
+                context.Players.Remove(dbEntry);
+                context.SaveChanges();
+            }
+            return dbEntry;
+        }
     }
 }

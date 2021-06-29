@@ -12,5 +12,6 @@ namespace Football_manager.Models
         IQueryable<Team> Teams { get; }
         IQueryable<Game> Games { get; }
         void SavePlayer(Player player);
+        Player DeletePlayer(int Id);
     }
 }
