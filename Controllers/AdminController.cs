@@ -17,5 +17,21 @@ namespace Football_manager.Controllers
         public ViewResult Edit(int Id) =>
                 View(repository.Players
                 .FirstOrDefault(p => p.Id == Id));
+        [HttpPost]
+
+        public IActionResult Edit(Player player)
+        {
+            if (ModelState.IsValid)
+            {
+                repository.SavePlayer(player);
+                TempData["message"] = $" (product.Name) has been saved";
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                // Что-то не так co значениями данных
+                return View(player);
+            }
+        }
     }
 }
