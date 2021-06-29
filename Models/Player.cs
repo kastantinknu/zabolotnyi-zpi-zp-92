@@ -8,7 +8,7 @@ namespace Football_manager.Models
 {
     public class Player
     {
-        [Required()]
+        [Required(ErrorMessage = "Please enter player's Id")]
         public byte Id { get; set; }
 
         [Required(ErrorMessage = "Please enter player's name")]
