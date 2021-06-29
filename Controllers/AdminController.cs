@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using Football_manager.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
+using Football_manager.Models.ViewModels;
+
 namespace Football_manager.Controllers
 {
     public class AdminController : Controller
@@ -15,8 +17,17 @@ namespace Football_manager.Controllers
         }
         public ViewResult Index() => View(repository.Players);
         public ViewResult Edit(int Id) =>
-                View(repository.Players
-                .FirstOrDefault(p => p.Id == Id));
+                View(
+                    new EditInfo
+                    {
+                        Players = repository.Players.ToList<Player>(),
+
+                        player = repository.Players
+                            .FirstOrDefault(p => p.Id == Id)
+                    });
+
+
+
         [HttpPost]
 
         public IActionResult Edit(Player player)
@@ -24,7 +35,7 @@ namespace Football_manager.Controllers
             if (ModelState.IsValid)
             {
                 repository.SavePlayer(player);
-                TempData["message"] = $" (product.Name) has been saved";
+                TempData["message"] = $"{player.Name} has been saved";
                 return RedirectToAction("Index");
             }
             else

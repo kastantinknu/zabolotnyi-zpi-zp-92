@@ -24,11 +24,11 @@ Layout = "_AdminLayout";
 				<td class="text-center">
 					<form asp-action="Delete" method="post">
 						<a asp-action="Edit" class="btn btn-sm btn-warning"
-						asp-route-playerId="@item.Id">Edit</a>
+						asp-route-Id="@item.Id">Edit</a>
 
 
 
-						<input type="hidden" name="PlayerID" value="@item.Id"/>
+						<input type="hidden" name="Id" value="@item.Id"/>
 
 
 						<button type="submit" class="btn btn-danger btn-sm">
