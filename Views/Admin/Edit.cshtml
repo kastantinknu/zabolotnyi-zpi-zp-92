@@ -35,9 +35,18 @@ Layout = "_AdminLayout";
 	</div>
 
 	<div class="form-group">
-	<label asp-for="Player.TeamId"></label>
-		<div><span asp-validation-for="Player.TeamId" class="text-danger"></span></div>
 
+<label>Team</label>
+@*<label asp-for="Teams.ToList().Find(x => x.Id==Model.Player.TeamId).Name"></label>
+*@
+<input  readonly asp-for="Teams.ToList().Find(x => x.Id==Model.Player.TeamId).Name" class="form-control"/>
+
+
+
+
+
+<label asp-for="Player.TeamId"></label>
+		<div><span asp-validation-for="Player.TeamId" class="text-danger"></span></div>
 	<input asp-for="Player.TeamId" class="form-control"/>
 	</div>
 

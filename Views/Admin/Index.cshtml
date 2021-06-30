@@ -10,8 +10,8 @@ Layout = "_AdminLayout";
 		<th class="text-right">Position</th>
 		<th class="text-right">RedCard</th>
 		<th class="text-right">Team</th>
-@*		<th class="text-right">TeamId</th>
-*@		<th class="text-center">Actions</th>
+@**@			<th class="text-right">TeamId</th>
+	<th class="text-center">Actions</th>
 		@foreach (var item in Model.Players)
 		{
 			<tr>
@@ -21,8 +21,8 @@ Layout = "_AdminLayout";
 				<td class="text-right">@item.RedCard</td>
 
 					<td class="text-right">@Model.Teams.ToList().Find(x => x.Id==item.TeamId).Name</td>
-@*				<td class="text-right">@item.TeamId</td>
-*@
+@*	*@			<td class="text-right">@item.TeamId</td>
+
 
 				<td class="text-center">
 					<form asp-action="Delete" method="post">

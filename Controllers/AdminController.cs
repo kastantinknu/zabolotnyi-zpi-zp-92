@@ -31,7 +31,8 @@ namespace Football_manager.Controllers
                 View(new AdminPlayersListViewModel
                     
                     
-                    {Player =  repository.Players
+                    {
+                    Player =  repository.Players
                             .FirstOrDefault(p => p.Id == Id),
                     Teams = repository.Teams.ToList<Team>()
                 }
@@ -68,7 +69,18 @@ namespace Football_manager.Controllers
             }
         }
 
-        public ViewResult Create() => View("Edit", new Player());
+        public ViewResult Create() => View("Edit",
+
+            new AdminPlayersListViewModel
+
+
+            {
+                Player = new Player(),
+                Teams = repository.Teams.ToList<Team>()
+            }
+
+
+           );
 
 
 
