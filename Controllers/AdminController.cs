@@ -16,20 +16,25 @@ namespace Football_manager.Controllers
             repository = repo;
         }
         public ViewResult Index() => View(new PlayersListViewModel
+        {
+            Teams = repository.Teams.ToList<Team>(),
+            Players = repository.Players.ToList<Player>(),
+            Paginginfo = new Paginginfo
             {
-                            Teams = repository.Teams.ToList<Team>(),
-                Players = repository.Players.ToList<Player>(),
-                                Paginginfo = new Paginginfo
-                                {
-                                    CurrentPage = 0,
-                                    ItemsPerPage = 0,
-                                    TotalItems = 0
-                                },
-                CurrentTeam = " "
-            });
+                CurrentPage = 0,
+                ItemsPerPage = 0,
+                TotalItems = 0
+            },
+            CurrentTeam = " "
+        });
         public ViewResult Edit(int Id) =>
-                View(repository.Players
-                            .FirstOrDefault(p => p.Id == Id)
+                View(new AdminPlayersListViewModel
+                    
+                    
+                    {Player =  repository.Players
+                            .FirstOrDefault(p => p.Id == Id),
+                    Teams = repository.Teams.ToList<Team>()
+                }
 
 
 

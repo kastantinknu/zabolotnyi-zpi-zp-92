@@ -1,4 +1,4 @@
-﻿@model  Player 
+﻿@model  AdminPlayersListViewModel
 @{
 ViewBag.Title = "Edit Player";
 Layout = "_AdminLayout";
@@ -8,37 +8,37 @@ Layout = "_AdminLayout";
 <form asp-action="Edit" method="post">
 
 	<div class="form-group">
-	<label asp-for="Id"></label>
-		<div><span asp-validation-for="Id" class="text-danger"></span></div>
+	<label asp-for="Player.Id"></label>
+		<div><span asp-validation-for="Player.Id" class="text-danger"></span></div>
 
-	<input asp-for="Id" class="form-control"/>
+	<input asp-for="Player.Id" class="form-control"/>
 	</div>
 
 	<div class="form-group">
-	<label asp-for="Name"></label>
-	<div><span asp-validation-for="Name" class="text-danger"></span></div>
-	<input asp-for="Name" class="form-control"/>
+	<label asp-for="Player.Name"></label>
+	<div><span asp-validation-for="Player.Name" class="text-danger"></span></div>
+	<input asp-for="Player.Name" class="form-control"/>
 	</div>
 
 	<div class="form-group">
-	<label asp-for ="Position"></label>
-		<div><span asp-validation-for="Position" class="text-danger"></span></div>
+	<label asp-for ="Player.Position"></label>
+		<div><span asp-validation-for="Player.Position" class="text-danger"></span></div>
 
-	<textarea asp-for="Position" class="form-control" ></textarea>
+	<textarea asp-for="Player.Position" class="form-control" ></textarea>
 	</div>
 
 	<div class="form-group">
-	<label asp-for="RedCard"></label >
-		<div><span asp-validation-for="RedCard" class="text-danger"></span></div>
+	<label asp-for="Player.RedCard"></label >
+		<div><span asp-validation-for="Player.RedCard" class="text-danger"></span></div>
 
-	<input asp-for="RedCard" class="form-control"/>
+	<input asp-for="Player.RedCard" class="form-control"/>
 	</div>
 
 	<div class="form-group">
-	<label asp-for="TeamId"></label>
-		<div><span asp-validation-for="TeamId" class="text-danger"></span></div>
+	<label asp-for="Player.TeamId"></label>
+		<div><span asp-validation-for="Player.TeamId" class="text-danger"></span></div>
 
-	<input asp-for="TeamId" class="form-control"/>
+	<input asp-for="Player.TeamId" class="form-control"/>
 	</div>
 
 	<div class="text-center">
