@@ -15,7 +15,18 @@ namespace Football_manager.Controllers
         public AdminController(IPlayerRepository repo) {
             repository = repo;
         }
-        public ViewResult Index() => View(repository.Players);
+        public ViewResult Index() => View(new PlayersListViewModel
+            {
+                            Teams = repository.Teams.ToList<Team>(),
+                Players = repository.Players.ToList<Player>(),
+                                Paginginfo = new Paginginfo
+                                {
+                                    CurrentPage = 0,
+                                    ItemsPerPage = 0,
+                                    TotalItems = 0
+                                },
+                CurrentTeam = " "
+            });
         public ViewResult Edit(int Id) =>
                 View(repository.Players
                             .FirstOrDefault(p => p.Id == Id)

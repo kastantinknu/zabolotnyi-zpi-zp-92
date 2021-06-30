@@ -41,7 +41,7 @@ namespace Football_manager.Controllers
                         repository.Players.Where(e =>
                         e.TeamId.ToString() == team).Count()
                 },
-                CurrentTeam = team,
+                CurrentTeam = team
                 
           // CurrentTeamName = team == null ?" ": repository.Teams.Where(e => e.Id.ToString()== team).First<Team>().Name
                 //team  

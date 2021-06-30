@@ -1,25 +1,28 @@
-﻿@model IEnumerable<Player>
+﻿@model  PlayersListViewModel
 @{
 ViewBag.Title = "All Player";
 Layout = "_AdminLayout";
 }
-<table class="table table-striped table-bordered table-sm">
+<table class="table table-striped table-bordered table-sm">   @*IEnumerable<Player>*@
 		<tr>
 		<th class="text-right">ID</th>
 		<th>Name</th>
 		<th class="text-right">Position</th>
 		<th class="text-right">RedCard</th>
-		<th class="text-right">TeamId</th>
-		<th class="text-center">Actions</th>
-		@foreach (var item in Model)
+		<th class="text-right">Team</th>
+@*		<th class="text-right">TeamId</th>
+*@		<th class="text-center">Actions</th>
+		@foreach (var item in Model.Players)
 		{
 			<tr>
 				<td class="text-right">@item.Id</td>
 				<td>@item.Name</td>
 				<td class="text-right">@item.Position</td>
 				<td class="text-right">@item.RedCard</td>
-				<td class="text-right">@item.TeamId</td>
 
+					<td class="text-right">@Model.Teams.ToList().Find(x => x.Id==item.TeamId).Name</td>
+@*				<td class="text-right">@item.TeamId</td>
+*@
 
 				<td class="text-center">
 					<form asp-action="Delete" method="post">

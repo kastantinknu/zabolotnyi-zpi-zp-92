@@ -18,23 +18,26 @@ namespace Football_manager.Models
 
         public void SavePlayer(Player player)
         {
-            if (player.Id == 0)
-            {
-                context.Players.Add(player);
-            }
-            else
-            {
+            //if (player.Id == 0)
+            //{
+            //    
+            //}
+            //
+              // /// ///// {
                 Player dbEntry = context.Players
                 .FirstOrDefault(p => p.Id == player.Id);
-                if (dbEntry != null)
-                {
-                    dbEntry.Name = player.Name;
-                    dbEntry.Position = player.Position;
-                    dbEntry.RedCard = player.RedCard;
-                    dbEntry.TeamId = player.TeamId;
-                    dbEntry.Id = player.Id;
-                }
+            if (dbEntry != null)
+            {
+                dbEntry.Name = player.Name;
+                dbEntry.Position = player.Position;
+                dbEntry.RedCard = player.RedCard;
+                dbEntry.TeamId = player.TeamId;
+                dbEntry.Id = player.Id;
             }
+            else { 
+            context.Players.Add(player);
+            }
+         
             context.SaveChanges();
         }
 
