@@ -15,7 +15,8 @@ namespace Football_manager.Controllers
         public AdminController(IPlayerRepository repo) {
             repository = repo;
         }
-        public ViewResult Index() => View(new PlayersListViewModel
+    public ViewResult Index() => View(
+        new PlayersListViewModel
         {
             Teams = repository.Teams.ToList<Team>(),
             Players = repository.Players.ToList<Player>(),
@@ -27,15 +28,10 @@ namespace Football_manager.Controllers
             },
             CurrentTeam = " "
         });
+         //   public ViewResult Index() => View(repository.Players);
         public ViewResult Edit(int Id) =>
-                View(new AdminPlayersListViewModel
-                    
-                    
-                    {
-                    Player =  repository.Players
-                            .FirstOrDefault(p => p.Id == Id),
-                    Teams = repository.Teams.ToList<Team>()
-                }
+                View(repository.Players
+                            .FirstOrDefault(p => p.Id == Id)
 
 
 
@@ -69,18 +65,7 @@ namespace Football_manager.Controllers
             }
         }
 
-        public ViewResult Create() => View("Edit",
-
-            new AdminPlayersListViewModel
-
-
-            {
-                Player = new Player(),
-                Teams = repository.Teams.ToList<Team>()
-            }
-
-
-           );
+        public ViewResult Create() => View("Edit", new Player());
 
 
 
@@ -96,3 +81,5 @@ namespace Football_manager.Controllers
                 }
     }
 }
+
+
