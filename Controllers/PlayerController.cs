@@ -12,7 +12,7 @@ namespace Football_manager.Controllers
     public class PlayerController : Controller
     {
         private IPlayerRepository repository;
-        public int PageSize = 3;
+        public int PageSize = 5;
         public PlayerController(IPlayerRepository repo)
         {
             repository = repo;

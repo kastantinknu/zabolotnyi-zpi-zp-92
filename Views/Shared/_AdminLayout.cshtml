@@ -12,7 +12,21 @@
 </style>
 </head>
 <body class="m-l p-l">
-<div class="bg-infо p-2"><h4>@ViewBag.Title</h4></div>
+
+
+<div class="navbar  navbar-light bg-success " role="navigation" >
+<a class="navbar-brand" href="/Player/List">Football manager CRUD</a>
+
+
+        <div class="row">
+                  
+                <div class=""><a class="btn btn-lg btn-secondary"  href="/Player/List">HOME</a></div>
+        </div>
+
+</div>
+<div class=" p-2"><h4>@ViewBag.Title</h4></div>
+
+
 @if(TempData["message"] != null) {
 <div class="alert alert-success">@TempData["message"]</div>
 }
