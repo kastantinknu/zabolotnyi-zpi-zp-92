@@ -13,3 +13,18 @@ INSERT INTO `sql11421518`.`Games` (`Id`, `Data`, `FirstTeamId`, `SecondTeamId`, 
 INSERT INTO `sql11421518`.`Games` (`Id`, `Data`, `FirstTeamId`, `SecondTeamId`, `Score`) VALUES ('12', '2020-01-31', '1', '2', '7:10');
 INSERT INTO `sql11421518`.`Games` (`Id`, `Data`, `FirstTeamId`, `SecondTeamId`, `Score`) VALUES ('13', '2020-05-31', '3', '2', '1:5');
 INSERT INTO `sql11421518`.`Games` (`Id`, `Data`, `FirstTeamId`, `SecondTeamId`, `Score`) VALUES ('14', '2020-12-31', '3', '4', '1:0');
+
+SELECT * FROM sql11421518.Players;
+INSERT INTO Players (Id, Name, Position, RedCard)
+VALUES (1, 'Raul', 'Goalkeeper', 0);
+VALUES (2, 'Pedro', 'Defender', 0);
+VALUES (3, 'Don', 'Midfielder', 0);
+VALUES (4, 'Dominic', 'Forward', 0);
+VALUES (5, 'Pablo', 'Forward', 0);
+
+ALTER TABLE Players ADD CONSTRAINT fk_teamid FOREIGN KEY (TeamName) REFERENCES Teams(Id);
+ALTER TABLE Games ADD CONSTRAINT fk_firstteamid FOREIGN KEY (FirstTeamId) REFERENCES Teams(Id);
+ALTER TABLE Games ADD CONSTRAINT fk_secondteamid FOREIGN KEY (SecondTeamId) REFERENCES Teams(Id);
+
+
+ALTER TABLE Players DROP   FOREIGN KEY fk_teamname;
